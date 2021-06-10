@@ -13,7 +13,7 @@ You can use sklearn (for data generation purposes only) in the following way,
 
 Here the output Y represents a vector of binary probabilities corresponding to X and can attain values of either 1 or 0. Your task is to fit a a two layer neural network that receives X and produces the predictions that accurately match the binary probabilites vector Y.  
 
-The two layer network is shown below. Each layer has a unique specified activation function that is applied on a linear combination of the preceding neurons. Find the network parameters including weight matrices W and biases B, such that the cross entropy loss is minimized at the end. For details related to binary cross entropy loss see [here](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html)  
+The two layer network is shown below. Each layer has a unique specified activation function that is applied on a linear combination of the preceding neurons. Find the network parameters including weight matrices W and biases B, such that the cross entropy loss is minimized at the end. For details related to binary cross entropy loss [click here](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html)  
 
 ![q2](./img/q2.png)  
 
