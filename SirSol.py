@@ -42,10 +42,15 @@ for i in range(0,num_iterations):
     cost = - np.sum(logprobs) / m
     print("Cost after iteration %i: %f" %(i, cost))
 
-    dZ2 = A2 - Y
-    dW2 = (1 / m) * np.dot(dZ2, A1.T) 
-    db2 = (1 / m) * np.sum(dZ2, axis=1, keepdims=True) 
+    # BackPropagation/Gradient Descent
+    # dZ2 = d(cost)/dZ2  = d(cost)/dA2  * d(A2)/dZ2 
+    # https://stats.stackexchange.com/questions/370723/how-to-calculate-the-derivative-of-crossentropy-error-function
+    dZ2 = A2 - Y  
+    dW2 = (1 / m) * np.dot(dZ2, A1.T)   # d(cost)/dW2 = d(cost)/dZ2 * d(Z2)/dW2 (for each example)
+    db2 = (1 / m) * np.sum(dZ2, axis=1, keepdims=True) # d(cost)/dW2 = d(cost)/dZ2 * d(Z2)/db2 (for each example)
     
+    # d(cost)/dZ1 = d(cost)/dZ2 * d(Z2)/dA1 * d(A1)/dZ1 
+    # https://socratic.org/questions/what-is-the-derivative-of-tanh-x
     dZ1 = np.multiply(np.dot(W2.T, dZ2), 1 - np.power(A1, 2)) 
     dW1 = (1 / m) * np.dot(dZ1, X.T)
     db1 = (1 / m) * np.sum(dZ1, axis=1, keepdims=True)
@@ -69,9 +74,9 @@ print('Accuracy: %d' %accuracy+'%')
 # now plot the predictions
 Y_hat = A2 > 0.5
 
-# fig, (ax1, ax2) = plt.subplots(1, 2)
-# ax1.scatter(X[0, :], X[1, :], c=Y[0,:], s=40, cmap=plt.cm.Spectral)
-# ax1.set_title('Original')
-# ax2.scatter(X[0, :], X[1, :], c=Y_hat[0,:], s=40, cmap=plt.cm.Spectral)
-# ax2.set_title('Output - Accuracy: %d' %accuracy+'%')
-# plt.show()
+fig, (ax1, ax2) = plt.subplots(1, 2)
+ax1.scatter(X[0, :], X[1, :], c=Y[0,:], s=40, cmap=plt.cm.Spectral)
+ax1.set_title('Original')
+ax2.scatter(X[0, :], X[1, :], c=Y_hat[0,:], s=40, cmap=plt.cm.Spectral)
+ax2.set_title('Output - Accuracy: %d' %accuracy+'%')
+plt.show()

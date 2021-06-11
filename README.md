@@ -1,3 +1,9 @@
+### Submission  
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/waleedbutt98/A3_CS2AI.git/HEAD)
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/waleedbutt98/A3_CS2AI/blob/master/A3.ipynb)
+
 <h1 style='text-align: center'> COMSATS University, Islamabad </h1>
 <h1 style='text-align: center'> Department of Computer Science </h1>
 <h1 style='text-align: center'> CSC483 - Topics in Computer Science II (Programming for Artificial Intelligence) </h1>
@@ -37,9 +43,3 @@ b2 = np.zeros(shape=(n_y, 1))
 num_iterations = 3000  
 
 learning_rate = 3  
-
-### Submission  
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/waleedbutt98/A3_CS2AI.git/HEAD)
-
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/waleedbutt98/A3_CS2AI/blob/master/A3.ipynb)
